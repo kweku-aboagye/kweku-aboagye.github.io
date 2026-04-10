@@ -38,29 +38,26 @@
 
 
           <div class="col-lg-8">
-            <h2 class="projects-title">AR Checkers</h2>
+            <h2 class="projects-title">Rhino Insurance Brokerage Website</h2>
 
             <div data-aos="fade-right">
-              <img src="../assets/img/projects/checkers.jpg" class="img-fluid" alt="">
+              <img src="../assets/img/projects/rhino.jpg" class="img-fluid" alt="">
             </div>
+
           </div>
 
           <div class="col-lg-4 projects-info">
             <h3>Project information</h3>
             <ul>
-              <li><strong>Category</strong>: Mobile Development (iOS)</li>
-              <li><strong>Client</strong>: DragonHacks</li>
+              <li><strong>Category</strong>: Web Development (Hostinger)</li>
+              <li><strong>Client</strong>: Rhino Insurance Brokerage (Accra, Ghana)</li>
               <li><strong>Project Status</strong>: Completed &#9989;</li>
-              <li><strong>Project URL</strong>: <a href="https://github.com/kweku-aboagye/DragonHack/" target="_blank">GitHub
-                  Repo</a></li>
-              <li><strong>Devpost</strong>: <a href="https://devpost.com/software/ar-checkers/" target="_blank">Project
-                  Link</a>
+              <li><strong>Website</strong>: <a href="https://rhinoinsurancebrokers.com/"
+                  target="_blank">rhinoinsurancebrokers.com</a></li>
             </ul>
 
             <p>
-              AR Checkers is an augmented reality application that revamps the way the game of checkers is played. See
-              more info on the
-              GitHub repo and Devpost
+              Built a professional insurance brokerage website for a insurance brokerage company based in Accra Ghana
             </p>
           </div>
 

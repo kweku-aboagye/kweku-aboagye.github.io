@@ -38,29 +38,27 @@
 
 
           <div class="col-lg-8">
-            <h2 class="projects-title">AR Checkers</h2>
+            <h2 class="projects-title">Parstagram</h2>
 
             <div data-aos="fade-right">
-              <img src="../assets/img/projects/checkers.jpg" class="img-fluid" alt="">
+              <img src="../assets/img/projects/insta.jpg" class="img-fluid" alt="">
             </div>
+
           </div>
 
           <div class="col-lg-4 projects-info">
             <h3>Project information</h3>
             <ul>
               <li><strong>Category</strong>: Mobile Development (iOS)</li>
-              <li><strong>Client</strong>: DragonHacks</li>
+              <li><strong>Client</strong>: CodePath.org</li>
               <li><strong>Project Status</strong>: Completed &#9989;</li>
-              <li><strong>Project URL</strong>: <a href="https://github.com/kweku-aboagye/DragonHack/" target="_blank">GitHub
+              <li><strong>Project URL</strong>: <a href="https://github.com/Kweku007/Parstagram/" target="_blank">GitHub
                   Repo</a></li>
-              <li><strong>Devpost</strong>: <a href="https://devpost.com/software/ar-checkers/" target="_blank">Project
-                  Link</a>
             </ul>
 
             <p>
-              AR Checkers is an augmented reality application that revamps the way the game of checkers is played. See
-              more info on the
-              GitHub repo and Devpost
+              This is an Instagram clone with a custom Parse backend that allows a user to post photos, view a global
+              photos feed, and add comments! See more info on the GitHub repo
             </p>
           </div>
 

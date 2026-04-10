@@ -38,29 +38,34 @@
 
 
           <div class="col-lg-8">
-            <h2 class="projects-title">AR Checkers</h2>
+            <h2 class="projects-title">LBPAlert</h2>
 
             <div data-aos="fade-right">
-              <img src="../assets/img/projects/checkers.jpg" class="img-fluid" alt="">
+              <img src="../assets/img/projects/lbpalert.jpg" class="img-fluid" alt="">
             </div>
+
           </div>
 
           <div class="col-lg-4 projects-info">
             <h3>Project information</h3>
             <ul>
-              <li><strong>Category</strong>: Mobile Development (iOS)</li>
-              <li><strong>Client</strong>: DragonHacks</li>
+              <li><strong>Category</strong>: Mobile Development (Flutter)</li>
+              <li><strong>Client</strong>: Drexel University College of Engineering</li>
               <li><strong>Project Status</strong>: Completed &#9989;</li>
-              <li><strong>Project URL</strong>: <a href="https://github.com/kweku-aboagye/DragonHack/" target="_blank">GitHub
+              <li><strong>Project URL</strong>: <a href="https://github.com/LBPAlert/lbpalert/" target="_blank">GitHub
                   Repo</a></li>
-              <li><strong>Devpost</strong>: <a href="https://devpost.com/software/ar-checkers/" target="_blank">Project
-                  Link</a>
+              <li><strong>Video Pitch</strong>: <a href="https://youtu.be/vj9rHvj_TEU/" target="_blank">Youtube Link</a>
+              <li><strong>Final Presentation</strong>: <a
+                  href="https://drive.google.com/file/d/1zCq1tvWQzu-lGcEFVNZWrgmwa_y77cWx/view?usp=sharing"
+                  target="_blank">Video Link</a>
+              </li>
             </ul>
 
             <p>
-              AR Checkers is an augmented reality application that revamps the way the game of checkers is played. See
-              more info on the
-              GitHub repo and Devpost
+              LBPAlert combines novel non-intrusive sensors, an advanced cloud based machie learning framework, and a
+              cross-platform software application to sense, predict and alert an individual of their risk to low back
+              pain in a highly accurate and convenient manner. I served as the Software team Lead on this project. See
+              GitHub repo for more information on the software application
             </p>
           </div>
 

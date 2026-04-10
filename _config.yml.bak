@@ -23,10 +23,10 @@ email: abeaboagye7@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   TBA
 markdown: kramdown
-baseurl: "/kweku-aboagye.github.io" # the subpath of your site, e.g. /blog
+baseurl: "/Kweku007.github.io" # the subpath of your site, e.g. /blog
 url: "https://kwekuaboagye.me/" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: _kwekz
-github_username: kweku-aboagye
+github_username: Kweku007
 
 # Build settings
 theme: minima
