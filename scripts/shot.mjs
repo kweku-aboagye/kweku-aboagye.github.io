@@ -30,16 +30,24 @@ if (!url || !out) {
   process.exit(1);
 }
 
+const w = Number(width);
+const h = Number(height);
+if (!Number.isFinite(w) || !Number.isFinite(h) || w <= 0 || h <= 0) {
+  console.error(`invalid viewport "${width}x${height}": width and height must be positive numbers`);
+  process.exit(1);
+}
+
 const { chromium } = await loadPlaywright();
 const browser = await chromium.launch();
-const page = await browser.newPage({
-  viewport: { width: Number(width), height: Number(height) },
-});
+try {
+  const page = await browser.newPage({ viewport: { width: w, height: h } });
+  await page.goto(url, { waitUntil: 'networkidle', timeout: 30000 });
+  // The template animates sections in on scroll; settle before capturing.
+  await page.waitForTimeout(500);
+  await page.screenshot({ path: out, fullPage: true });
+} finally {
+  // Otherwise a failed navigation leaves an orphaned Chromium behind.
+  await browser.close();
+}
 
-await page.goto(url, { waitUntil: 'networkidle', timeout: 30000 });
-// The template animates sections in on scroll; settle before capturing.
-await page.waitForTimeout(500);
-await page.screenshot({ path: out, fullPage: true });
-await browser.close();
-
-console.log(`wrote ${out} (${width}x${height})`);
+console.log(`wrote ${out} (${w}x${h})`);

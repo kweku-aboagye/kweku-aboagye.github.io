@@ -28,6 +28,11 @@ So to see a section you must load its hash: `/#about`, `/#experience`,
 `/#projects`, `/#contact`. Screenshotting `/` after changing the Projects grid
 will show you the hero and tell you nothing.
 
+The hero is the exception: capture it from `/` with no hash. There is no
+`#home`, and the Home nav link's `#header` target is a `<header>` rather than a
+`<section>` — `main.js` only reveals sections, so `/#header` hides the hero and
+gives you a blank page.
+
 ## Look at the UI before and after visual changes
 
 This site is a visual artifact, so do not change styling or markup blind.
