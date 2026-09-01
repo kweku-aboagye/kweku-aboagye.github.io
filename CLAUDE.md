@@ -15,8 +15,18 @@ in `CNAME`.
 - `assets/js/main.js` — nav, scroll animations, project filtering.
 - `assets/vendor/**` — third-party libraries. Do not edit these; they are
   vendored copies.
-- `*.bak` files are old snapshots kept alongside the real files. Never edit a
-  `.bak`, and never let one shadow the change you were asked to make.
+
+## Sections are hidden by default
+
+`index.html` is a single page whose `<section>` elements are all
+`display: none` (`assets/css/style.css`), revealed one at a time by hash links
+handled in `assets/js/main.js`. Loading `/` therefore shows **only the hero** —
+About, Experience, Projects and Contact are in the DOM but invisible, even in a
+full-page screenshot.
+
+So to see a section you must load its hash: `/#about`, `/#experience`,
+`/#projects`, `/#contact`. Screenshotting `/` after changing the Projects grid
+will show you the hero and tell you nothing.
 
 ## Look at the UI before and after visual changes
 
@@ -24,11 +34,16 @@ This site is a visual artifact, so do not change styling or markup blind.
 Render it and actually look at it — both before, to see what you are changing,
 and after, to confirm the change landed and broke nothing:
 
-    ./scripts/preview.sh                                            # home page
+    ./scripts/preview.sh                                            # hero only
+    ./scripts/preview.sh '/#projects'                               # one section
+    ./scripts/preview.sh all                                        # every section
     ./scripts/preview.sh /projects-details/flix-projects-details.html
 
+Quote any path containing `#`, or bash truncates it as a comment.
+
 That serves the site locally and writes `desktop.png` (1440x900) and
-`mobile.png` (390x844) to `/tmp/portfolio-shots/`. Read both images.
+`mobile.png` (390x844) to `/tmp/portfolio-shots/`. Read both images. The `all`
+mode writes `<section>-desktop.png` / `<section>-mobile.png` per section.
 
 Always check mobile. The template is responsive, the nav collapses to a
 hamburger under 992px, and the hero image reflows — a change that looks right
@@ -49,6 +64,16 @@ Notes:
 - In Claude Code web sessions, Chromium and Playwright are preinstalled and the
   live site at https://kwekuaboagye.me is unreachable (blocked by the sandbox
   network policy). Always render locally rather than fetching production.
+
+## Conventions
+
+- Every page carries `<!DOCTYPE html>` and `<html lang="en">`. Keep it that way;
+  without the doctype browsers fall into quirks mode and the box model shifts.
+- `404.html` is served by GitHub Pages for missing URLs at *any* depth, so its
+  asset paths must stay root-absolute (`/assets/...`). Relative paths break the
+  styling on anything below the root.
+- Give every `<img>` real `alt` text — the project cards use the project name.
+- `assets/vendor/**` is vendored third-party code. Do not edit it.
 
 ## Deploying
 

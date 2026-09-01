@@ -4,8 +4,14 @@
 #   ./scripts/preview.sh [path] [outdir]
 #
 # Examples:
-#   ./scripts/preview.sh                                  # home page
+#   ./scripts/preview.sh                                  # home (hero only)
+#   ./scripts/preview.sh '/#projects'                     # one section
+#   ./scripts/preview.sh all                              # every section
 #   ./scripts/preview.sh /projects-details/flix-projects-details.html
+#
+# index.html hides every <section> behind `display: none` and reveals one at a
+# time via hash links, so a screenshot of `/` shows ONLY the hero. Quote the
+# path — an unquoted # starts a bash comment.
 #
 # Prefers Jekyll for exact fidelity; falls back to a plain static server,
 # which renders everything correctly except that index.html's YAML front
@@ -47,11 +53,18 @@ for _ in $(seq 1 40); do
   sleep 0.25
 done
 
-URL="http://127.0.0.1:$PORT$PATH_TO_VIEW"
 export NO_PROXY='*' HTTP_PROXY='' HTTPS_PROXY=''
 
-node "$ROOT/scripts/shot.mjs" "$URL" "$OUTDIR/desktop.png" 1440 900
-node "$ROOT/scripts/shot.mjs" "$URL" "$OUTDIR/mobile.png" 390 844
+if [ "$PATH_TO_VIEW" = "all" ]; then
+  for s in home about experience projects contact; do
+    node "$ROOT/scripts/shot.mjs" "http://127.0.0.1:$PORT/#$s" "$OUTDIR/$s-desktop.png" 1440 900
+    node "$ROOT/scripts/shot.mjs" "http://127.0.0.1:$PORT/#$s" "$OUTDIR/$s-mobile.png" 390 844
+  done
+else
+  URL="http://127.0.0.1:$PORT$PATH_TO_VIEW"
+  node "$ROOT/scripts/shot.mjs" "$URL" "$OUTDIR/desktop.png" 1440 900
+  node "$ROOT/scripts/shot.mjs" "$URL" "$OUTDIR/mobile.png" 390 844
+fi
 
 echo
 echo "screenshots in $OUTDIR (served by $SERVED_BY)"
